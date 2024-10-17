@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .card {
+      width: 300px;
+      height: 400px;
+      margin: 50px auto;
+      background: linear-gradient(45deg, #ff69b4, #ff1493);
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .heart {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      background: #fff;
+      animation: heartbeat 1.5s ease-in-out infinite;
+      cursor: pointer;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    .heart:before {
+      left: -25px;
+    }
+
+    .heart:after {
+      top: -25px;
+    }
+
+    .content {
+      position: relative;
+      top: 100px;
+      padding: 20px;
+      text-align: center;
+      color: white;
+      font-family: 'Arial', sans-serif;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+
+    .flowers {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 80px;
+      background: repeating-linear-gradient(
+        45deg,
+        #ff69b4,
+        #ff69b4 10px,
+        #ff1493 10px,
+        #ff1493 20px
+      );
+      animation: moveFlowers 10s linear infinite;
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes moveFlowers {
+      0% { background-position: 0 0; }
+      100% { background-position: 50px 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="heart"></div>
+    <div class="content">
+      <h1>¡Feliz Día Mamá!</h1>
+      <p>En cada latido de tu corazón</p>
+      <p>hay un mundo de amor infinito.</p>
+      <p>Tu vida es el regalo más precioso,</p>
+      <p>tu salud es mi mayor deseo,</p>
+      <p>y tu amor es mi guía eternal.</p>
+    </div>
+    <div class="flowers"></div>
+  </div>
+</body>
+</html>
